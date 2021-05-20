@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+## 起動方法
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. `npm install`
+1. `npm start`
 
-## Available Scripts
+### 機能要件開発時間
 
-In the project directory, you can run:
+- 社員情報入力・表示
+- BMI 並び替え
+- 社員情報編集・削除
+- 必要があれば並べ直し
 
-### `yarn start`
+所要時間：３時間
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### その他開発時間（バリデーションなど）
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- バリデーション
+- スタイル調整
+- コードの微調整
 
-### `yarn test`
+所要時間：１時間
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### うまくいった点
 
-### `yarn build`
+レイアウトがシンプルだが見やすく、機能面でもどれがどの機能を持っているかがわかりやすい。
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 難しかった点
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+リストの状態をどのように持つか迷った。
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+バケツリレーになるのはあまり良くないという認識があった。
 
-### `yarn eject`
+しかしどの道全てがリストに準ずるコンポーネントであるので変わらないと思い、
+Props で受け渡す形をとった。
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 時間がかかった点
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+編集モーダルと削除モーダルを使用しているのだが、
+どこに配置するか以下の二択で迷った。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 状態の書き換えを受け渡し、末端のコンポーネントに置く
+- 上位のコンポーネントからモーダル開閉のハンドラのみを渡すか
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+前者の方が状態の扱いが楽であったので、前者で進めた。

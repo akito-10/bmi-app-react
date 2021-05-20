@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import FormArea from "./components/FormArea";
+import EmployeeList from "./components/EmployeeList";
+import { ListType } from "./types";
 
-function App() {
+function App(): JSX.Element {
+  const [list, setList] = useState<ListType[]>();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FormArea setList={setList} />
+      <EmployeeList list={list!} setList={setList} />
     </div>
   );
 }
